@@ -71,38 +71,14 @@ class _MyHomePageState extends State<MyHomePage> {
           ExpansionTile(
             title: Text('Category2'),
             children: [
-              ListTile(
-                title: Text('Name2'),
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: List.generate(3, (i) {
-                    return Checkbox(
-                      value: dummyDate2[i],
-                      onChanged: (value) {
-                        setState(() {
-                          dummyDate2[i] = value ?? false;
-                        });
-                      },
-                    );
-                  }),
-                ),
-              ),
-              ListTile(
-                title: Text('Name3'),
-                trailing: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: List.generate(3, (i) {
-                    return Checkbox(
-                      value: dummyDate3[i],
-                      onChanged: (value) {
-                        setState(() {
-                          dummyDate3[i] = value ?? false;
-                        });
-                      },
-                    );
-                  }),
-                ),
-              ),
+              ...dummyCategory2.itemList.map((item) {
+                return CategoryItemTile(
+                  item: item,
+                  onChanged: () {
+                    setState(() {});
+                  },
+                );
+              }),
               TextButton.icon(
                 icon: const Icon(Icons.add),
                 label: const Text('Add Item'),
