@@ -31,16 +31,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: List.generate(3, (i) {
                     return Checkbox(
                       value: dummyDate1[i],
-                      // onChanged: (value) {
-                      //   setState(() {
-                      //     dummyDate1[i] = value ?? false;
-                      //   });
-                      // },
                       onChanged: (i == 0 || dummyDate1[i - 1])
                           ? (value) {
                               setState(() {
                                 dummyDate1[i] = value ?? false;
-                                // 右側のチェックをオフにする処理（必要なら）
                                 if (!dummyDate1[i]) {
                                   for (int j = i + 1;
                                       j < dummyDate1.length;
