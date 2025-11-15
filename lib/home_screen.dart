@@ -40,6 +40,11 @@ Category dummyCategory2 = Category(
   itemList: dummyCategory2ItemList,
 );
 
+List<Category> dummyCategoryList = [
+  dummyCategory1,
+  dummyCategory2,
+];
+
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
@@ -50,42 +55,28 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: ListView(
         children: [
-          ExpansionTile(
-            title: Text(dummyCategory1.categoryName),
-            children: [
-              ...dummyCategory1.itemList.map((item) {
-                return CategoryItemTile(
-                  item: item,
-                  onChanged: () {
+          ...dummyCategoryList.map((category) {
+            return ExpansionTile(
+              title: Text(category.categoryName),
+              children: [
+                ...category.itemList.map((item) {
+                  return CategoryItemTile(
+                    item: item,
+                    onChanged: () {
+                      setState(() {});
+                    },
+                  );
+                }),
+                TextButton.icon(
+                  icon: const Icon(Icons.add),
+                  label: const Text('Add Item'),
+                  onPressed: () {
                     setState(() {});
                   },
-                );
-              }),
-              TextButton.icon(
-                icon: const Icon(Icons.add),
-                label: const Text('Add Item'),
-                onPressed: () {},
-              ),
-            ],
-          ),
-          ExpansionTile(
-            title: Text('Category2'),
-            children: [
-              ...dummyCategory2.itemList.map((item) {
-                return CategoryItemTile(
-                  item: item,
-                  onChanged: () {
-                    setState(() {});
-                  },
-                );
-              }),
-              TextButton.icon(
-                icon: const Icon(Icons.add),
-                label: const Text('Add Item'),
-                onPressed: () {},
-              ),
-            ],
-          ),
+                ),
+              ],
+            );
+          }),
           Center(
             child: TextButton.icon(
               icon: const Icon(Icons.add),
