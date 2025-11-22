@@ -20,9 +20,6 @@ class _MyHomePageState extends State<MyHomePage> {
   late Box<List> categoryBox;
 
   final hive = HiveService();
-  // void saveToHive() {
-  //   categoryBox.put('categories', categoryList);
-  // }
 
   Future<String?> getNameFromDialog(String titleText, String hintText) async {
     final controller = TextEditingController();
@@ -52,13 +49,10 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
-    // categoryBox = Hive.box<List>('categoriesBox');
-
     if (isDebug) {
       DummyData dummyData = DummyData();
       categoryList = dummyData.getDummyData();
     } else {
-      // final saved = categoryBox.get('categories');
       final saved = hive.getCategories();
       if (saved != null) {
         categoryList = List<Category>.from(saved);
@@ -84,7 +78,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     item: item,
                     onChanged: () {
                       setState(() {
-                        // saveToHive();
                         hive.saveData(categoryList);
                       });
                     },
@@ -101,7 +94,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         category.itemList.add(Item(
                             itemName: itemName,
                             checkList: List.filled(3, false)));
-                        // saveToHive();
                         hive.saveData(categoryList);
                       });
                     }
@@ -121,7 +113,6 @@ class _MyHomePageState extends State<MyHomePage> {
                   setState(() {
                     categoryList.add(
                         Category(categoryName: categoryName, itemList: []));
-                    // saveToHive();
                     hive.saveData(categoryList);
                   });
                 }
