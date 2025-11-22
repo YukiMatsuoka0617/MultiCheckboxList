@@ -1,6 +1,6 @@
-import 'package:flutter_application_multi_checkbox_list/category.dart';
+import 'package:flutter_application_multi_checkbox_list/models/category/category.dart';
 import 'package:flutter_application_multi_checkbox_list/data/hive/hive_keys.dart';
-import 'package:flutter_application_multi_checkbox_list/item.dart';
+import 'package:flutter_application_multi_checkbox_list/models/item/item.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 
