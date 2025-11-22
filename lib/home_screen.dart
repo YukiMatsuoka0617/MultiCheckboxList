@@ -4,7 +4,6 @@ import 'package:flutter_application_multi_checkbox_list/category_item_tile.dart'
 import 'package:flutter_application_multi_checkbox_list/data/dummy_data.dart';
 import 'package:flutter_application_multi_checkbox_list/data/hive/hive_service.dart';
 import 'package:flutter_application_multi_checkbox_list/models/item/item.dart';
-import 'package:hive/hive.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -17,7 +16,6 @@ bool isDebug = false;
 
 class _MyHomePageState extends State<MyHomePage> {
   List<Category> categoryList = [];
-  late Box<List> categoryBox;
 
   final hive = HiveService();
 
