@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_multi_checkbox_list/data/hive/hive_service.dart';
 import 'package:flutter_application_multi_checkbox_list/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await HiveService.init();
+
   runApp(const MyApp());
 }
 
