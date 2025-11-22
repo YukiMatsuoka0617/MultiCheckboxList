@@ -1,5 +1,5 @@
-import 'package:flutter_application_multi_checkbox_list/category.dart';
-import 'package:flutter_application_multi_checkbox_list/item.dart';
+import 'package:flutter_application_multi_checkbox_list/models/category/category.dart';
+import 'package:flutter_application_multi_checkbox_list/models/item/item.dart';
 
 class DummyData {
   Category dummyCategory1 = Category(

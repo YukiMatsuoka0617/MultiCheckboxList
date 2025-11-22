@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_multi_checkbox_list/item.dart';
+import 'package:flutter_application_multi_checkbox_list/models/item/item.dart';
 
 class CategoryItemTile extends StatelessWidget {
   final Item item;

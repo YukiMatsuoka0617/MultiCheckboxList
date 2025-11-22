@@ -1,5 +1,5 @@
+import 'package:flutter_application_multi_checkbox_list/models/item/item.dart';
 import 'package:hive/hive.dart';
-import 'item.dart';
 
 part 'category.g.dart';
 
